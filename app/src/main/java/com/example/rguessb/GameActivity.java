@@ -86,7 +86,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void endRound(View view){
-        //Intent intent = new Intent(this, scoreScreenActivity.class);
+        Intent intent = new Intent(this, ScoreActivity.class);
+        startActivity(intent);
 
     }
 
