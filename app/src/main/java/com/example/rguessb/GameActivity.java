@@ -19,6 +19,10 @@ public class GameActivity extends AppCompatActivity {
     int greenVal;
     int blueVal;
 
+    int redGuess;
+    int greenGuess;
+    int blueGuess;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +31,12 @@ public class GameActivity extends AppCompatActivity {
         sbRed = findViewById(R.id.seekBarRed);
         sbGreen = findViewById(R.id.seekBarGreen);
         sbBlue = findViewById(R.id.seekBarBlue);
-
+        //Changing the displayed value of the color when user moves seek bar
         sbRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 ((TextView)findViewById(R.id.textView)).setText(String.valueOf(progress));
+                redGuess = progress;
             }
 
             @Override
@@ -48,6 +53,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 ((TextView)findViewById(R.id.textView2)).setText(String.valueOf(progress));
+                blueGuess = progress;
             }
 
             @Override
@@ -64,6 +70,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 ((TextView)findViewById(R.id.textView3)).setText(String.valueOf(progress));
+                greenGuess = progress;
             }
 
             @Override
@@ -87,6 +94,11 @@ public class GameActivity extends AppCompatActivity {
 
     public void endRound(View view){
         Intent intent = new Intent(this, ScoreActivity.class);
+        int redDif = Math.abs(redVal - redGuess);
+        int blueDif = Math.abs(blueVal - blueGuess);
+        int greenDif = Math.abs(greenVal - greenGuess);
+        int score = 255*3 - redDif - blueDif - greenDif;
+        intent.putExtra("com.example.rguessb.score", "Score: "+ String.valueOf(score));
         startActivity(intent);
 
     }
