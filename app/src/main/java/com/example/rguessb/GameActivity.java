@@ -35,7 +35,7 @@ public class GameActivity extends AppCompatActivity {
         sbRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ((TextView)findViewById(R.id.textView)).setText(String.valueOf(progress));
+                ((TextView)findViewById(R.id.textView)).setText("R: "+String.valueOf(progress));
                 redGuess = progress;
             }
 
@@ -52,7 +52,7 @@ public class GameActivity extends AppCompatActivity {
         sbGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ((TextView)findViewById(R.id.textView2)).setText(String.valueOf(progress));
+                ((TextView)findViewById(R.id.textView2)).setText("G: "+String.valueOf(progress));
                 blueGuess = progress;
             }
 
@@ -69,7 +69,7 @@ public class GameActivity extends AppCompatActivity {
         sbBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ((TextView)findViewById(R.id.textView3)).setText(String.valueOf(progress));
+                ((TextView)findViewById(R.id.textView3)).setText("B: "+String.valueOf(progress));
                 greenGuess = progress;
             }
 
