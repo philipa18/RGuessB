@@ -8,6 +8,7 @@ import android.view.View;
 
 import java.util.Random;
 
+// The main menu: A screen with a single button that starts the Game Activity
 public class MainActivity extends AppCompatActivity {
 
     @Override

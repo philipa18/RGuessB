@@ -11,10 +11,12 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
+    // Declare sliders
     private SeekBar sbRed;
     private SeekBar sbGreen;
     private SeekBar sbBlue;
 
+    // _Val will hold the actually # for that color, _Guess will hold guess for # from user
     int redVal;
     int greenVal;
     int blueVal;
@@ -30,7 +32,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         // Displays randomly-generated color.
         findViewById(R.id.viewColor).setBackgroundColor(getRandomColor());
-
+        // Match each slider variable to the correct slider
         sbRed = findViewById(R.id.seekBarRed);
         sbGreen = findViewById(R.id.seekBarGreen);
         sbBlue = findViewById(R.id.seekBarBlue);
